@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Persistences;
+using Service;
 
 namespace ApiFarmacia
 {
@@ -31,6 +32,8 @@ namespace ApiFarmacia
             var connection = Configuration.GetConnectionString("Dev") ;
             services.AddDbContext<FarmaciaDbContex>
                 (options => options.UseSqlServer(connection));
+
+            services.AddTransient<IMedicamentoservice, Medicamentoservice>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

@@ -14,7 +14,7 @@ namespace Persistences
         public DbSet<Clientes> Clientes { get; set; }
         public DbSet<Empleados> Empleados { get; set; }
         public DbSet<Proveedor> Proveedor { get; set; }
-
+        public object Farmacia { get; set; }
 
         public FarmaciaDbContex(DbContextOptions<FarmaciaDbContex> options)
             : base(options)
