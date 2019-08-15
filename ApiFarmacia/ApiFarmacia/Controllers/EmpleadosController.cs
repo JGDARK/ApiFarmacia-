@@ -10,13 +10,13 @@ namespace ApiFarmacia.Controllers
 {
     [Route("[controller]")]
     [ApiController]
-    public class MedicamentosController : Controller
+    public class EmpleadosController : Controller
 
     {
-        private readonly IMedicamentoservice _medicamentoservice;
-        public MedicamentosController(IMedicamentoservice medicamentoservice)
+        private readonly IEmpleadosservices _empleadosservice;
+        public EmpleadosController(IEmpleadosservices empleadosservices)
         {
-            _medicamentoservice = medicamentoservice;
+            _empleadosservice = empleadosservices;
 
         }
         // GET api/values
@@ -24,7 +24,7 @@ namespace ApiFarmacia.Controllers
         public IActionResult Get()
         {
             return Ok(
-                _medicamentoservice.GetAll()
+                _empleadosservice.GetAll()
                 );
         }
 
@@ -33,25 +33,25 @@ namespace ApiFarmacia.Controllers
         public IActionResult Get(int id)
         {
             return Ok(
-                _medicamentoservice.Get(id)
+                _empleadosservice.Get(id)
                 );
         }
 
         // POST api/values
         [HttpPost]
-        public IActionResult Post([FromBody] Medicamentos model)
+        public IActionResult Post([FromBody] Empleados model)
         {
             return Ok(
-                _medicamentoservice.Add(model)
+                _empleadosservice.Add(model)
                 );
         }
 
         // PUT api/values/5
         [HttpPut]
-        public IActionResult Put([FromBody] Medicamentos model)
+        public IActionResult Put([FromBody] Empleados model)
         {
             return Ok(
-                _medicamentoservice.Update(model)
+                _empleadosservice.Update(model)
                 );
         }
 
@@ -60,7 +60,7 @@ namespace ApiFarmacia.Controllers
         public IActionResult Delete(int id)
         {
             return Ok(
-               _medicamentoservice.Delete(id)
+               _empleadosservice.Delete(id)
                );
         }
     }

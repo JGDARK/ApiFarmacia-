@@ -10,13 +10,13 @@ namespace ApiFarmacia.Controllers
 {
     [Route("[controller]")]
     [ApiController]
-    public class MedicamentosController : Controller
+    public class ClientesController : Controller
 
     {
-        private readonly IMedicamentoservice _medicamentoservice;
-        public MedicamentosController(IMedicamentoservice medicamentoservice)
+        private readonly IClienteservice _clienteservice;
+        public ClientesController(IClienteservice clienteservice)
         {
-            _medicamentoservice = medicamentoservice;
+            _clienteservice = clienteservice;
 
         }
         // GET api/values
@@ -24,7 +24,7 @@ namespace ApiFarmacia.Controllers
         public IActionResult Get()
         {
             return Ok(
-                _medicamentoservice.GetAll()
+                _clienteservice.GetAll()
                 );
         }
 
@@ -33,25 +33,25 @@ namespace ApiFarmacia.Controllers
         public IActionResult Get(int id)
         {
             return Ok(
-                _medicamentoservice.Get(id)
+                _clienteservice.Get(id)
                 );
         }
 
         // POST api/values
         [HttpPost]
-        public IActionResult Post([FromBody] Medicamentos model)
+        public IActionResult Post([FromBody] Clientes model)
         {
             return Ok(
-                _medicamentoservice.Add(model)
+                _clienteservice.Add(model)
                 );
         }
 
         // PUT api/values/5
         [HttpPut]
-        public IActionResult Put([FromBody] Medicamentos model)
+        public IActionResult Put([FromBody] Clientes model)
         {
             return Ok(
-                _medicamentoservice.Update(model)
+                _clienteservice.Update(model)
                 );
         }
 
@@ -60,7 +60,7 @@ namespace ApiFarmacia.Controllers
         public IActionResult Delete(int id)
         {
             return Ok(
-               _medicamentoservice.Delete(id)
+               _clienteservice.Delete(id)
                );
         }
     }

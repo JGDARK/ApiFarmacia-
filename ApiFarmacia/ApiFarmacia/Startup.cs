@@ -34,6 +34,9 @@ namespace ApiFarmacia
                 (options => options.UseSqlServer(connection));
 
             services.AddTransient<IMedicamentoservice, Medicamentoservice>();
+            services.AddTransient<IClienteservice, Clienteservice>();
+            services.AddTransient<IEmpleadosservices, Empleadosservices>();
+            services.AddTransient<IProveedorservice, Proveedorservice>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
