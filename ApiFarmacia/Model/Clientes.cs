@@ -6,7 +6,7 @@ namespace Model
 {
     public class Clientes
     {
-        public int ClienteId { get; set; }
+        public int Id { get; set; }
         public string Nombre { get; set; }
         public string Numero { get; set; }
     }

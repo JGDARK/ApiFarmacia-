@@ -7,7 +7,7 @@ namespace Model
     public class Empleados
 
     {
-        public int Empleadosid { get; set; }
+        public int Id { get; set; }
         public string Nombre { get; set; }
         public string Telefono { get; set; }
     }
